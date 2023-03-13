@@ -30,6 +30,47 @@ local Plugin = {
                     notify("There are already clouds.")
                 end
             end
+        },
+        ["removeClouds"] = {
+            ["ListName"] = "noclouds / noclds",
+            ["Description"] = "Removes ROBLOX'S new volumetric clouds if found.",
+            ["Aliases"] = {"noclouds", "noclds"},
+            ["Function"] = function(args, speaker)
+                if workspace.Terrain:FindFirstChild("Clouds") then
+                    workspace.Terrain.Clouds:Destroy()
+                    notify("Clouds removed successfully!")
+                else
+                    notify("There are already no clouds.")
+                end
+            end
+        },
+        ["cloudsDensity"] = {
+            ["ListName"] = "setcldsDensity [num]",
+            ["Description"] = "Sets ROBLOX'S new volumetric clouds density.",
+            ["Aliases"] = {"setcldsDensity"},
+            ["Function"] = function(args, speaker)
+                if workspace.Terrain:FindFirstChild("Clouds") then
+                    workspace.Terrain.Clouds.Density = args[1]
+                    notify("Clouds density successfully set to: " .. args[1] .. "!")
+                else
+                    notify("There are no clouds.")
+                end
+
+            end
+        },
+        ["cloudsCover"] = {
+            ["ListName"] = "setcldsCover [num]",
+            ["Description"] = "Sets ROBLOX'S new volumetric clouds cover.",
+            ["Aliases"] = {"setcldsCover"},
+            ["Function"] = function(args, speaker)
+                if workspace.Terrain:FindFirstChild("Clouds") then
+                    workspace.Terrain.Clouds.Cover = args[1]
+                    notify("Clouds cover successfully set to: " .. args[1] .. "!")
+                else
+                    notify("There are no clouds.")
+                end
+
+            end
         }
     }
 }
