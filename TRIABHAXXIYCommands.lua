@@ -1,6 +1,6 @@
 local Plugin = {
-    ["PluginName"] = "TRIABHAXX's endorsed commands",
-    ["PluginDescription"] = "Endorsed commands, made by TRIABHAXX Co.",
+    ["PluginName"] = "TRIABHAXX's commands",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.0.5-release",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
