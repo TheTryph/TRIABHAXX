@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.0-release",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.1-release",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -33,7 +33,7 @@ local Plugin = {
         },
         ["removeClouds"] = {
             ["ListName"] = "noclouds / noclds",
-            ["Description"] = "Removes ROBLOX'S new volumetric clouds if found.",
+            ["Description"] = "Removes ROBLOX's new volumetric clouds.",
             ["Aliases"] = {"noclouds", "noclds"},
             ["Function"] = function(args, speaker)
                 if workspace.Terrain:FindFirstChild("Clouds") then
@@ -46,25 +46,24 @@ local Plugin = {
         },
         ["cloudsDensity"] = {
             ["ListName"] = "setcldsDensity [num]",
-            ["Description"] = "Sets ROBLOX'S new volumetric clouds density.",
-            ["Aliases"] = {"setcldsDensity"},
+            ["Description"] = "Sets ROBLOX's new volumetric clouds density.",
+            ["Aliases"] = {"setcldsdensity"},
             ["Function"] = function(args, speaker)
                 if workspace.Terrain:FindFirstChild("Clouds") then
-                    workspace.Terrain.Clouds.Density = args[1]
+                    workspace.Terrain.Clouds.Density = tonumber(args[1])
                     notify("Clouds density successfully set to: " .. args[1] .. "!")
                 else
                     notify("There are no clouds.")
                 end
-
             end
         },
         ["cloudsCover"] = {
             ["ListName"] = "setcldsCover [num]",
-            ["Description"] = "Sets ROBLOX'S new volumetric clouds cover.",
-            ["Aliases"] = {"setcldsCover"},
+            ["Description"] = "Sets ROBLOX's new volumetric clouds cover.",
+            ["Aliases"] = {"setcldscover"},
             ["Function"] = function(args, speaker)
                 if workspace.Terrain:FindFirstChild("Clouds") then
-                    workspace.Terrain.Clouds.Cover = args[1]
+                    workspace.Terrain.Clouds.Cover = tonumber(args[1])
                     notify("Clouds cover successfully set to: " .. args[1] .. "!")
                 else
                     notify("There are no clouds.")
