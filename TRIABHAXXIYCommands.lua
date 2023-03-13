@@ -17,6 +17,19 @@ local Plugin = {
             ["Function"] =  function(args, speaker)
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/telekinesis.lua"))()
             end
+        },
+        ["createClouds"] = {
+            ["ListName"] = "clouds / clds",
+            ["Description"] = "Creates ROBLOX's new volumetric clouds.",
+            ["Aliases"] = {"clouds" , "clds"},
+            ["Function"] = function(args, speaker)
+                if not workspace.Terrain:FindFirstChild("Clouds") then
+                    Instance.new("Clouds", workspace.Terrain)
+                    notify("Clouds added successfully!")
+                else
+                    notify("There are already clouds.")
+                end
+            end
         }
     }
 }
