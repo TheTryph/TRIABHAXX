@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.1-release",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.2-beta",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -59,12 +59,26 @@ local Plugin = {
         },
         ["cloudsCover"] = {
             ["ListName"] = "setcldsCover [num]",
-            ["Description"] = "Sets ROBLOX's new volumetric cloudss cover.",
+            ["Description"] = "Sets ROBLOX's new volumetric clouds cover.",
             ["Aliases"] = {"setcldscover"},
             ["Function"] = function(args, speaker)
                 if workspace.Terrain:FindFirstChild("Clouds") then
                     workspace.Terrain.Clouds.Cover = tonumber(args[1])
                     notify("Clouds cover successfully set to: " .. args[1] .. "!")
+                else
+                    notify("There are no clouds.")
+                end
+
+            end
+        },
+        ["cloudsColor"] = {
+            ["ListName"] = "setcldsColor [R] [G] [B]",
+            ["Description"] = "Sets ROBLOX's new volumetric clouds color.",
+            ["Aliases"] = {"setcldscolor"},
+            ["Function"] = function(args, speaker)
+                if workspace.Terrain:FindFirstChild("Clouds") then
+                    workspace.Terrain.Clouds.Color = Color3.fromRGB(tonumber(args[1]), tonumber(args[2]), tonumber(args[3]))
+                    notify("Clouds color successfully set!")
                 else
                     notify("There are no clouds.")
                 end
