@@ -59,7 +59,7 @@ local Plugin = {
         },
         ["cloudsCover"] = {
             ["ListName"] = "setcldsCover [num]",
-            ["Description"] = "Sets ROBLOX's new volumetric clouds cover.",
+            ["Description"] = "Sets ROBLOX's new volumetric cloudss cover.",
             ["Aliases"] = {"setcldscover"},
             ["Function"] = function(args, speaker)
                 if workspace.Terrain:FindFirstChild("Clouds") then
