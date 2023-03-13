@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.2-beta",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.3-beta",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -19,7 +19,7 @@ local Plugin = {
             end
         },
         ["createClouds"] = {
-            ["ListName"] = "clouds / clds",
+            ["ListName"] = "clouds / clds (CLIENT)",
             ["Description"] = "Creates ROBLOX's new volumetric clouds.",
             ["Aliases"] = {"clouds" , "clds"},
             ["Function"] = function(args, speaker)
@@ -32,7 +32,7 @@ local Plugin = {
             end
         },
         ["removeClouds"] = {
-            ["ListName"] = "noclouds / noclds",
+            ["ListName"] = "noclouds / noclds (CLIENT)",
             ["Description"] = "Removes ROBLOX's new volumetric clouds.",
             ["Aliases"] = {"noclouds", "noclds"},
             ["Function"] = function(args, speaker)
@@ -45,7 +45,7 @@ local Plugin = {
             end
         },
         ["cloudsDensity"] = {
-            ["ListName"] = "setcldsDensity [num]",
+            ["ListName"] = "setcldsDensity [num] (CLIENT)",
             ["Description"] = "Sets ROBLOX's new volumetric clouds density.",
             ["Aliases"] = {"setcldsdensity"},
             ["Function"] = function(args, speaker)
@@ -58,7 +58,7 @@ local Plugin = {
             end
         },
         ["cloudsCover"] = {
-            ["ListName"] = "setcldsCover [num]",
+            ["ListName"] = "setcldsCover [num] (CLIENT)",
             ["Description"] = "Sets ROBLOX's new volumetric clouds cover.",
             ["Aliases"] = {"setcldscover"},
             ["Function"] = function(args, speaker)
@@ -72,7 +72,7 @@ local Plugin = {
             end
         },
         ["cloudsColor"] = {
-            ["ListName"] = "setcldsColor [R] [G] [B]",
+            ["ListName"] = "setcldsColor [R] [G] [B] (CLIENT)",
             ["Description"] = "Sets ROBLOX's new volumetric clouds color.",
             ["Aliases"] = {"setcldscolor"},
             ["Function"] = function(args, speaker)
