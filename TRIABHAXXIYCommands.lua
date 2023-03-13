@@ -7,7 +7,7 @@ local Plugin = {
             ["Description"] = "executes TRIABHAXX's island hack",
             ["Aliases"] = {"islandsUI", "isUI"},
             ["Function"] = function(args,speaker)
-              loadstring(game:HttpGet("https://pastebin.com/raw/steJcdKc"))()
+                loadstring(game:HttpGet("https://pastebin.com/raw/steJcdKc"))()
             end
         },
         ["telekinesis"] = {
@@ -15,7 +15,8 @@ local Plugin = {
             ["Description"] = "FE telekinesis script hack, source from https://www.mastersmzscripts.com",
             ["Aliases"] = {"telekinesis", "tel"},
             ["Function"] =  function(args, speaker)
-                
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/telekinesis.lua"))()
+            end
         }
     }
 }
