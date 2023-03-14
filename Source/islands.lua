@@ -1,5 +1,5 @@
 local HackCode = "TRIABHAXX"
-local outdateDate = "12/18/2022"
+local outdateDate = "01/01/2023"
 
 function unpackDate(date)
 	date = string.split(date, "/")
@@ -38,13 +38,12 @@ local function sendMessagesToChat(tabla)
 end
 
 if outdateCheck() == true then
-	sendMessageToChat("Exploit is outdated. Please try again later.")
-	return false
+	sendMessageToChat("Exploit is outdated.")
 end
 
 
 StarterGui:SetCore("SendNotification", {
-	Title = "TRIABHAXX CO's AutoFarm Islands",
+	Title = "TRIABHAXX Co. AutoFarm Islands",
 	Text = "Script has loaded successfully.",
 	Duration = 1000,
 	Button1 = "Confirm",
