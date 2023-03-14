@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.1.3-beta",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.2.0-beta",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -83,6 +83,54 @@ local Plugin = {
                     notify("There are no clouds.")
                 end
 
+            end
+        },
+        ["SetSkybox"] = {
+            ["ListName"] = "skybox [ImageID] (CLIENT)",
+            ["Description"] = "Creates a new skybox with the ImageID repeated on 6 sides.",
+            ["Aliases"] = {"skybox"},
+            ["Function"] = function(args, speaker)
+                _G.isInSkybox = true
+                if not game.ReplicatedStorage:FindFirstChild("ServerSky") then
+                    local sky = game.Lighting:FindFirstChildOfClass("Sky")
+                    if sky then
+                        sky.Name = "ServerSky"
+                        sky.Parent = game.ReplicatedStorage
+                    end
+                end
+
+                local skyboxImageId = args[1]
+
+                if game.Lighting:FindFirstChildOfClass("Sky") then
+                    game.Lighting:FindFirstChildOfClass("Sky"):Destroy()
+                end
+
+                local Skybox = Instance.new("Sky", game.Lighting)
+                Skybox.SkyboxBk = skyboxImageId
+                Skybox.SkyboxDn = skyboxImageId
+                Skybox.SkyboxFt = skyboxImageId
+                Skybox.SkyboxUp = skyboxImageId
+                Skybox.SkyboxLf = skyboxImageId
+                Skybox.SkyboxRt = skyboxImageId
+
+                notify("Skybox created successfully.")
+            end
+        },
+        ["RestoreSkybox"] = {
+            ["ListName"] = "restoreskybox / rskybox (CLIENT)",
+            ["description"] = "Restores to the server's initial skybox.",
+            ["Aliases"] = {"restoreskybox", "rskybox"},
+            ["Function"] = function(args, speaker)
+                if _G.isInSkybox == true then
+                    _G.isInSkybox = false
+                    game.Lighting:FindFirstChildOfClass("Sky"):Destroy()
+                    if game.ReplicatedStorage:FindFirstChild("ServerSky") then
+                        game.ReplicatedStorage:FindFirstChild("ServerSky").Parent = game.Lighting
+                    end
+                    notify("Skybox restored successfully.")
+                else
+                    notify("You have not added a new skybox.")
+                end
             end
         }
     }
