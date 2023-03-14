@@ -125,7 +125,9 @@ local Plugin = {
                     _G.isInSkybox = false
                     game.Lighting:FindFirstChildOfClass("Sky"):Destroy()
                     if game.ReplicatedStorage:FindFirstChild("ServerSky") then
-                        game.ReplicatedStorage:FindFirstChild("ServerSky").Parent = game.Lighting
+                        local sky = game.ReplicatedStorage:FindFirstChild("ServerSky")
+                        sky.Parent = game.Lighting
+                        sky.Name = "Sky"
                     end
                     notify("Skybox restored successfully.")
                 else
