@@ -38,7 +38,7 @@ local function sendMessagesToChat(tabla)
 end
 
 if outdateCheck() == true then
-	sendMessageToChat("Exploit is outdated.")
+	sendMessageToChat("Exploit is outdated since " .. outdateDate)
 end
 
 
