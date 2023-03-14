@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.2.0-beta",
+    ["PluginDescription"] = "made by TRIABHAXX Co., v0.2.1-beta",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -106,12 +106,12 @@ local Plugin = {
                 end
 
                 local Skybox = Instance.new("Sky", game.Lighting)
-                Skybox.SkyboxBk = skyboxImageId
-                Skybox.SkyboxDn = skyboxImageId
-                Skybox.SkyboxFt = skyboxImageId
-                Skybox.SkyboxUp = skyboxImageId
-                Skybox.SkyboxLf = skyboxImageId
-                Skybox.SkyboxRt = skyboxImageId
+                Skybox.SkyboxBk = "rbxassetid://" .. tostring(skyboxImageId)
+                Skybox.SkyboxDn = "rbxassetid://" .. tostring(skyboxImageId)
+                Skybox.SkyboxFt = "rbxassetid://" .. tostring(skyboxImageId)
+                Skybox.SkyboxUp = "rbxassetid://" .. tostring(skyboxImageId)
+                Skybox.SkyboxLf = "rbxassetid://" .. tostring(skyboxImageId)
+                Skybox.SkyboxRt = "rbxassetid://" .. tostring(skyboxImageId)
 
                 notify("Skybox created successfully.")
             end
