@@ -1,10 +1,16 @@
+local ver = "v0.2.10-beta"
+local companyInfo = {
+    Name = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyName.txt"),
+    Date = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyDate.txt")
+}
+
 local Plugin = {
-    ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co. 2022-2023, v0.2.1-beta",
+    ["PluginName"] = companyInfo.Name .. " commands",
+    ["PluginDescription"] = "made by " .. companyInfo.Name .. " " .. companyInfo.Date .. ", " .. ver,
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
-            ["Description"] = "executes TRIABHAXX's island hack",
+            ["Description"] = "executes " .. companyInfo.Name .. " island hack",
             ["Aliases"] = {"islandsUI", "isUI"},
             ["Function"] = function(args,speaker)
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/islands.lua"))()
@@ -133,6 +139,14 @@ local Plugin = {
                 else
                     notify("You have not added a new skybox.")
                 end
+            end
+        },
+        ["TRIABHAXXInfo"] = {
+            ["ListName"] = "tinfo",
+            ["description"] = "Information about the plugin",
+            ["Aliases"] = {"tinfo"},
+            ["Function"] = function(args, speaker)
+                notify("Commands plugin made by " .. companyInfo.Name .. " " .. companyInfo.Date .. ", plugin version: " .. ver .. ", Discord community server coming soon.")
             end
         }
     }
