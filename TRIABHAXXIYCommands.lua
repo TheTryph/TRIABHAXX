@@ -1,6 +1,6 @@
 local Plugin = {
     ["PluginName"] = "TRIABHAXX's commands",
-    ["PluginDescription"] = "made by TRIABHAXX Co., v0.2.1-beta",
+    ["PluginDescription"] = "made by TRIABHAXX Co. 2022-2023, v0.2.1-beta",
     ["Commands"] = {
         ["islands"] = {
             ["ListName"] = "islandsUI / isUI",
@@ -99,7 +99,7 @@ local Plugin = {
                     end
                 end
 
-                local skyboxImageId = args[1]
+                local skyboxImageId = args[1] or 12245026315
 
                 if game.Lighting:FindFirstChildOfClass("Sky") then
                     game.Lighting:FindFirstChildOfClass("Sky"):Destroy()
