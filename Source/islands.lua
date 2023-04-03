@@ -1,5 +1,5 @@
 local HackCode = "TRIABHAXX"
-local outdateDate = "01/01/2023"
+local outdateDate = "04/10/2023"
 
 function unpackDate(date)
 	date = string.split(date, "/")
@@ -39,6 +39,7 @@ end
 
 if outdateCheck() == true then
 	sendMessageToChat("Exploit is outdated since " .. outdateDate)
+	sendMessageToChat("Exploit may not work as intended.")
 end
 
 
@@ -80,7 +81,7 @@ task.spawn(function()
 								["norm"] = v.Position,
 								["pos"] = v.Position,
 							}
-							game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
+							game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
 						end)
 						
 					end
@@ -93,7 +94,7 @@ task.spawn(function()
 								["norm"] = v.Position,
 								["pos"] = v.Position,
 							}
-							game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
+							game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
 						end)
 						
 					end
@@ -107,7 +108,7 @@ task.spawn(function()
 							["pos"] = v.Position
 						}
 
-						game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_BLOCK_HIT_REQUEST:InvokeServer(ohTable1)
 						end)
 					end
 				if v:FindFirstChild("Chest") then
@@ -122,7 +123,7 @@ task.spawn(function()
 								["tool"] = item,
 								["action"] = "withdraw"
 							}
-							game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_CHEST_TRANSACTION:InvokeServer(ohTable1)
+							game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_CHEST_TRANSACTION:InvokeServer(ohTable1)
 						end)
 					end
 				end
@@ -136,7 +137,7 @@ task.spawn(function()
 							["model"] = v
 						}
 
-						game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(ohTable1)
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_HARVEST_CROP_REQUEST:InvokeServer(ohTable1)
 
 						task.wait()
 						local ohTable2 = {
@@ -146,7 +147,7 @@ task.spawn(function()
 							["blockType"] = vName
 						}
 
-						game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.CLIENT_BLOCK_PLACE_REQUEST:InvokeServer(ohTable2)
+						game:GetService("ReplicatedStorage").rbxts_include.node_modules:FindFirstChild("@rbxts").net.out._NetManaged.CLIENT_BLOCK_PLACE_REQUEST:InvokeServer(ohTable2)
 								
 					end)
 				end
