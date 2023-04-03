@@ -1,5 +1,5 @@
 local HackCode = "TRIABHAXX"
-local outdateDate = "04/10/2023"
+local outdateDate = "02/04/2023"
 
 function unpackDate(date)
 	date = string.split(date, "/")
@@ -39,7 +39,8 @@ end
 
 if outdateCheck() == true then
 	sendMessageToChat("Exploit is outdated since " .. outdateDate)
-	sendMessageToChat("Exploit may not work as intended.")
+	sendMessageToChat("Hack is indefinitely patched, upon use you may get banned.")
+	return false
 end
 
 
