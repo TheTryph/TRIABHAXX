@@ -32,14 +32,6 @@ local Plugin = {
     ["PluginName"] = companyInfo.Name .. " commands",
     ["PluginDescription"] = "made by " .. companyInfo.Name .. " " .. companyInfo.Date .. ", " .. ver,
     ["Commands"] = {
-        ["islands"] = {
-            ["ListName"] = "islandsUI / isUI",
-            ["Description"] = "executes " .. companyInfo.Name .. " island hack",
-            ["Aliases"] = {"islandsUI", "isUI"},
-            ["Function"] = function(args, speaker)
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/islands.lua"))()
-            end
-        },
         ["telekinesis"] = {
             ["ListName"] = "telekinesis / tel",
             ["Description"] = "FE telekinesis script hack, source from https://www.mastersmzscripts.com",
