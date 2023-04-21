@@ -1,4 +1,4 @@
-local ver = "v0.3.11-beta"
+local ver = "v0.3.12-beta"
 local companyInfo = {
     Name = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyName.txt"),
     Date = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyDate.txt")
@@ -19,7 +19,13 @@ local installedMacros = {
             end
             wait(1)
         end
-    end
+    end,
+}
+
+local installedScripts = {
+    ["islands"] = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/islands.lua"))()
+    end,
 }
 
 local Plugin = {
@@ -58,6 +64,26 @@ local Plugin = {
             ["Function"] = function(args, speaker)
                 local stringToShow = "Currently installed macros: "
                 for i,v in pairs(installedMacros) do
+                    stringToShow = stringToShow .. i .. ", "
+                end
+                notify(stringToShow)
+            end
+        },
+        ["gamescript"] = {
+            ["ListName"] = "script / scr",
+            ["Description"] = "Executes various scripts, check the currently installed scripts by using the command 'scripts'",
+            ["Aliases"] = {"script", "scr"},
+            ["Function"] = function(args, speaker)
+                installedScripts[args[1]]()
+            end
+        },
+        ["getScript"] = {
+            ["ListName"] = "scripts / gscr",
+            ["Description"] = "Shows you a list of currently available scripts.",
+            ["Aliases"] = {"scripts", "gscr"},
+            ["Function"] = function(args, speaker)
+                local stringToShow = "Currently installed scripts: "
+                for i,v in pairs(installedScripts) do
                     stringToShow = stringToShow .. i .. ", "
                 end
                 notify(stringToShow)
