@@ -48,7 +48,7 @@ local Plugin = {
             ["Description"] = "Executes various macros, check the current macros by using the command 'macros'",
             ["Aliases"] = {"macro", "mcr"},
             ["Function"] = function(args, speaker)
-                installedMacros.args[2]()
+                installedMacros[args[1]]()
             end
         },
         ["getMacro"] = {
