@@ -1,4 +1,4 @@
-local ver = "v0.2.10-beta"
+local ver = "v0.3.10-beta"
 local companyInfo = {
     Name = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyName.txt"),
     Date = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyDate.txt")
