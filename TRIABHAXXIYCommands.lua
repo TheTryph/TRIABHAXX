@@ -14,7 +14,7 @@ local installedMacros = {
         local tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
 
         while tool.Parent == game.Players.LocalPlayer.Character do
-            if getStaminaPercent() > 99 then
+            if getStaminaPercent() > 94 then
                 game:GetService("VirtualUser"):ClickButton1(Vector2.new(.5, .5))
             end
             wait(1)
