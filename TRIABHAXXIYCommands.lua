@@ -1,4 +1,4 @@
-local ver = "v0.3.10-beta"
+local ver = "v0.3.11-beta"
 local companyInfo = {
     Name = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyName.txt"),
     Date = game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/additionalInfo/companyDate.txt")
@@ -48,7 +48,7 @@ local Plugin = {
             ["Description"] = "Executes various macros, check the current macros by using the command 'macros'",
             ["Aliases"] = {"macro", "mcr"},
             ["Function"] = function(args, speaker)
-                installedMacros.args[1]()
+                installedMacros.args[2]()
             end
         },
         ["getMacro"] = {
