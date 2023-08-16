@@ -19,13 +19,48 @@ local installedMacros = {
             end
             wait(1)
         end
-    end,
+    end
 }
 
 local installedScripts = {
     ["islands"] = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/TheTryph/TRIABHAXX/main/Source/islands.lua"))()
     end,
+    ["bloxfruit"] = function()
+        loadstring(game:HttpGet "https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()
+    end,
+    ["petsimx"] = function()
+        local library = require(game.ReplicatedStorage.Library)
+
+        hookfunction(library.WorldCmds.CanDoAction, function()
+            return true
+        end)
+
+        fflag = hookfunction(library.FFlags.Get, function(...)
+            local args = {...}
+            if tostring(args[1]):lower():match('teleport') then
+                return true
+            end
+            return fflag(...)
+        end)
+
+        hookfunction(library.FFlags.CanBypass, function()
+            return true
+        end)
+
+        for i, v in next, library.WorldCmds do
+            if typeof(v) == 'function' then
+                local a = getinfo(v).name
+                if a:lower():match('has') and not a:lower():match('loaded') then
+                    hookfunction(v, function()
+                        return true
+                    end)
+                end
+            end
+        end
+
+        getsenv(game.Players.LocalPlayer.PlayerScripts.Scripts.GUIs.Teleport).UpdateAreas()
+    end
 }
 
 local Plugin = {
@@ -55,7 +90,7 @@ local Plugin = {
             ["Aliases"] = {"macros", "gmcr"},
             ["Function"] = function(args, speaker)
                 local stringToShow = "Currently installed macros: "
-                for i,v in pairs(installedMacros) do
+                for i, v in pairs(installedMacros) do
                     stringToShow = stringToShow .. i .. ", "
                 end
                 notify(stringToShow)
@@ -75,7 +110,7 @@ local Plugin = {
             ["Aliases"] = {"scripts", "gscr"},
             ["Function"] = function(args, speaker)
                 local stringToShow = "Currently installed scripts: "
-                for i,v in pairs(installedScripts) do
+                for i, v in pairs(installedScripts) do
                     stringToShow = stringToShow .. i .. ", "
                 end
                 notify(stringToShow)
